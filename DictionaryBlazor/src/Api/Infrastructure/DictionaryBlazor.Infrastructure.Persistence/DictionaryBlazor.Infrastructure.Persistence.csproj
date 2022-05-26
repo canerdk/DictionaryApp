@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\DictionaryBlazor.Common\DictionaryBlazor.Common.csproj" />
     <ProjectReference Include="..\..\Core\DictionaryBlazor.Api.Domain\DictionaryBlazor.Api.Domain.csproj" />
   </ItemGroup>
 

@@ -24,7 +24,8 @@ namespace DictionaryBlazor.Infrastructure.Persistence.EntityConfigurations.Entry
 
             builder.HasOne(x => x.CreatedUser)
                 .WithMany(x => x.EntryFavorites)
-                .HasForeignKey(x => x.CreatedById);
+                .HasForeignKey(x => x.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

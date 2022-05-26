@@ -13,6 +13,11 @@ namespace DictionaryBlazor.Infrastructure.Persistence.Context
     {
         public const string DEFAULT_SCHEMA = "dbo";
 
+        public DictionaryBlazorContext()
+        {
+
+        }
+
         public DictionaryBlazorContext(DbContextOptions options) : base(options)
         {
         }
@@ -25,6 +30,18 @@ namespace DictionaryBlazor.Infrastructure.Persistence.Context
         public DbSet<EntryCommentVote> EntryCommentVotes { get; set; }
         public DbSet<EntryCommentFavorite> EntryCommentFavorites { get; set; }
         public DbSet<EmailConfirmation> EmailConfirmations { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                var connectionString = "Server=.;Database=dictionaryblazor;Trusted_Connection=True;";
+                optionsBuilder.UseSqlServer(connectionString, opt =>
+                {
+                    opt.EnableRetryOnFailure();
+                });
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
