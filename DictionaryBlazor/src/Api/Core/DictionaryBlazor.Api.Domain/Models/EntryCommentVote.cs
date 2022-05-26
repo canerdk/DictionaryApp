@@ -9,7 +9,7 @@ namespace DictionaryBlazor.Api.Domain.Models
 {
     public class EntryCommentVote : BaseEntity
     {
-        public Guid EntryId { get; set; }
+        public Guid EntryCommentId { get; set; }
         public VoteType VoteType { get; set; }
         public Guid CreatedById { get; set; }
 

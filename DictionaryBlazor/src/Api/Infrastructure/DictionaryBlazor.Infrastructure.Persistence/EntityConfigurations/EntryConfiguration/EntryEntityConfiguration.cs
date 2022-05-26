@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DictionaryBlazor.Infrastructure.Persistence.EntityConfigurations.Entry
+namespace DictionaryBlazor.Infrastructure.Persistence.EntityConfigurations.EntryConfiguration
 {
     public class EntryEntityConfiguration : BaseEntityConfiguration<Api.Domain.Models.Entry>
     {
